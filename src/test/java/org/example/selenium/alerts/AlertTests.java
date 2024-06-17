@@ -1,4 +1,4 @@
-package org.example.alerts;
+package org.example.selenium.alerts;
 
 import org.example.utils.ConfProperties;
 import org.openqa.selenium.Alert;

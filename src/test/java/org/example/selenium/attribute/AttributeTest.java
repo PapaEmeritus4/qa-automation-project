@@ -1,4 +1,4 @@
-package org.example.attribute;
+package org.example.selenium.attribute;
 
 
 import org.example.utils.ConfProperties;

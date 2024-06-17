@@ -1,4 +1,4 @@
-package org.example;
+package org.example.selenium.login;
 
 import org.example.utils.ConfProperties;
 import org.openqa.selenium.By;
