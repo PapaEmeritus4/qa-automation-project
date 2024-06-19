@@ -3,7 +3,9 @@ package org.example.utils;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 abstract public class BaseTest {
 
@@ -13,12 +15,12 @@ abstract public class BaseTest {
         Configuration.headless = false;
     }
 
-    @BeforeMethod
+    @BeforeTest
     public void init() {
         setUp();
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown() {
         Selenide.closeWebDriver();
     }
