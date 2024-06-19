@@ -1,4 +1,4 @@
-package org.example.selenide.appleinsider;
+package org.example.appleinsider;
 
 import org.example.utils.BaseTest;
 import org.testng.annotations.Test;

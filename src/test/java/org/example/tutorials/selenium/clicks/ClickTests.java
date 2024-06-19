@@ -1,4 +1,4 @@
-package org.example.selenium.clicks;
+package org.example.tutorials.selenium.clicks;
 
 import org.example.utils.ConfProperties;
 import org.openqa.selenium.By;

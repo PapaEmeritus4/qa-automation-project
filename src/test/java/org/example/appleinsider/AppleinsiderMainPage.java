@@ -1,4 +1,4 @@
-package org.example.selenide.appleinsider;
+package org.example.appleinsider;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;

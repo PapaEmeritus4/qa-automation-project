@@ -1,4 +1,4 @@
-package org.example.selenide.exception;
+package org.example.tutorials.selenide.exception;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

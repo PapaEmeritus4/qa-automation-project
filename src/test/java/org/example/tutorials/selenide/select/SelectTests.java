@@ -1,4 +1,4 @@
-package org.example.selenide.select;
+package org.example.tutorials.selenide.select;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;

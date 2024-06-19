@@ -1,4 +1,4 @@
-package org.example.selenide.login;
+package org.example.utils.login;
 
 public interface LoginPage {
 

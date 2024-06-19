@@ -1,4 +1,4 @@
-package org.example.selenide.login.herokuapp;
+package org.example.herokuapp;
 
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeTest;
