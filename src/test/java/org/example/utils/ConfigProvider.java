@@ -14,6 +14,7 @@ public interface ConfigProvider {
     }
 
     String URL = readConfig().getString("url");
+    String SECOND_URL = readConfig().getString("secondUrl");
     Integer AGE = readConfig().getInt("age");
     String ADMIN_LOGIN = readConfig().getString("usersParams.admin.login");
     String ADMIN_PASSWORD = readConfig().getString("usersParams.admin.password");
@@ -21,4 +22,5 @@ public interface ConfigProvider {
     String DEMO_PASSWORD = readConfig().getString("usersParams.demo.password");
     String DEMO_LOGIN = readConfig().getString("usersParams.demo.login");
     Boolean IS_DEMO_ADMIN = readConfig().getBoolean("usersParams.demo.isAdmin");
+
 }
