@@ -18,6 +18,7 @@
     <testng.version>7.10.2</testng.version>
     <selenide.version>7.3.2</selenide.version>
     <assertj-core.version>3.26.0</assertj-core.version>
+    <typesafe-config.version>1.4.3</typesafe-config.version>
   </properties>
 
   <dependencies>
@@ -58,6 +59,12 @@
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>${testng.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.typesafe</groupId>
+      <artifactId>config</artifactId>
+      <version>${typesafe-config.version}</version>
     </dependency>
   </dependencies>
 
