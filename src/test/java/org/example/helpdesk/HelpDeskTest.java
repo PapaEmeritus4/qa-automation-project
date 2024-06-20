@@ -2,12 +2,15 @@ package org.example.helpdesk;
 
 import org.example.utils.BaseSeleniumTest;
 import org.example.utils.ConfigProvider;
+import org.example.utils.TestListener;
 import org.example.utils.TestValues;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
+@Listeners(TestListener.class)
 public class HelpDeskTest extends BaseSeleniumTest {
 
     @Test

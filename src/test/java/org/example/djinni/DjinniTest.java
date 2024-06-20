@@ -1,5 +1,7 @@
 package org.example.djinni;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.example.utils.BaseTest;
 import org.testng.annotations.Test;
@@ -14,6 +16,8 @@ public class DjinniTest extends BaseTest {
     private final static String URL = "https://djinni.co/q/6a448d8f5a/";
 
     @Test
+    @Owner("Volodymyr Bilan")
+    @Description("Test check attributes by HashMap, parsing djinni profiles")
     public void testCheckAttributesByHashMap() {
         DjinniResumePage djinniResumePage = new DjinniResumePage(URL);
 
@@ -30,6 +34,8 @@ public class DjinniTest extends BaseTest {
     }
 
     @Test
+    @Owner("Volodymyr Bilan")
+    @Description("Test check attributes by Object, parsing djinni profiles")
     public void testCheckAttributesByObject() {
         DjinniResumePage djinniResumePage = new DjinniResumePage(URL);
         Resume expectedAttributes = new Resume("Ч", "Одеса", 6, true);

@@ -10,7 +10,7 @@ import java.time.Duration;
 
 abstract public class BaseSeleniumTest {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
