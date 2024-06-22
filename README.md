@@ -1,8 +1,14 @@
 # How to Run
-1. Use comand line
-2. git clone https://github.com/PapaEmeritus4/qa-automation-project
-3. cd qa-automation-project
-4. mvn clean test
+Use comand line
+```bash
+git clone https://github.com/PapaEmeritus4/qa-automation-project
+```
+```bash
+cd qa-automation-project
+```
+```bash
+mvn clean test
+```
 
 ## [Appleinsider package](https://github.com/PapaEmeritus4/qa-automation-project/tree/master/src/test/java/org/example/appleinsider)
 This project is an automation test for the [Appleinsider](https://appleinsider.ru/) website, implemented using the [Selenide](https://selenide.org/) library and the **TestNG** testing framework. The purpose of the test is to verify the search functionality on 
