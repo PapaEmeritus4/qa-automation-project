@@ -8,7 +8,7 @@ public class LoginTests {
 
     private HerokuappLoginPage herokuappLoginPage;
     private String correctUsername = "tomsmith";
-    private String correctPassword = "SuperSecretPassword";
+    private String correctPassword = "SuperSecretPassword!";
 
     @BeforeTest
     public void setUp() {
