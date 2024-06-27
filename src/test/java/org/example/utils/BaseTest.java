@@ -4,8 +4,8 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 abstract public class BaseTest {
 
@@ -16,13 +16,14 @@ abstract public class BaseTest {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void init() {
         setUp();
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
+        Selenide.closeWindow();
         Selenide.closeWebDriver();
     }
 }

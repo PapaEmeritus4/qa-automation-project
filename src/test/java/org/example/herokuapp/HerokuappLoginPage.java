@@ -1,39 +1,29 @@
 package org.example.herokuapp;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 
-
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 // url - https://the-internet.herokuapp.com/login
 public class HerokuappLoginPage {
 
-    public void openLoginPage() {
-        open("https://the-internet.herokuapp.com/login");
+    private final SelenideElement usernameField = $("#username");
+    private final SelenideElement passwordField = $("#password");
+    private final SelenideElement loginButton = $x("//button[@class='radius']");
+    private final SelenideElement message = $("#flash");
+
+    public HerokuappLoginPage(String url) {
+        open(url);
     }
 
-    public void enterUsername(String username) {
-        $("#username").setValue(username);
+    public void login(String username, String password) {
+        usernameField.setValue(username);
+        passwordField.setValue(password);
+        loginButton.shouldBe(Condition.visible).click();
     }
 
-    public void enterPassword(String password) {
-        $("#password").setValue(password);
-    }
-
-    public void clickLoginButton() {
-        $("button").click();
-    }
-
-    public void shouldHaveSuccessMessage() {
-        $("#flash")
-                .should(exist, visible)
-                .shouldHave(text("You logged into a secure area!"));
-    }
-
-    public void shoudHaveUnsuccessfulMessage() {
-        $("#flash")
-                .should(exist, visible)
-                .shouldHave(text("Your username is invalid!"));
+    public String getMessage() {
+        return message.getText();
     }
 }

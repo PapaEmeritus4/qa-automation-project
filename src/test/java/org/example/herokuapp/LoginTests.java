@@ -1,36 +1,38 @@
 package org.example.herokuapp;
 
-import com.codeborne.selenide.Configuration;
-import org.testng.annotations.BeforeTest;
+import org.example.utils.BaseTest;
 import org.testng.annotations.Test;
 
-public class LoginTests {
+import static org.testng.Assert.*;
 
-    private HerokuappLoginPage herokuappLoginPage;
-    private String correctUsername = "tomsmith";
-    private String correctPassword = "SuperSecretPassword!";
+public class LoginTests extends BaseTest {
 
-    @BeforeTest
+    private HerokuappLoginPage loginPage;
+
+    @Override
     public void setUp() {
-        Configuration.browserSize = "1920x1080";
-        herokuappLoginPage = new HerokuappLoginPage();
+        super.setUp();
+        loginPage = new HerokuappLoginPage(HerokuappData.LOGIN_PAGE_URL);
     }
 
-    @Test
+    @Test(description = "Test successful login by valid credentials functionality")
     public void testSuccessfulLogin() {
-        herokuappLoginPage.openLoginPage();
-        herokuappLoginPage.enterUsername(correctUsername);
-        herokuappLoginPage.enterPassword(correctPassword);
-        herokuappLoginPage.clickLoginButton();
-        herokuappLoginPage.shouldHaveSuccessMessage();
+        loginPage.login(HerokuappData.CORRECT_USERNAME, HerokuappData.CORRECT_PASSWORD);
+
+        assertTrue(loginPage.getMessage().contains(HerokuappData.SUCCESS_MESSAGE));
     }
 
-    @Test
-    public void testUnsuccessfulLogin() {
-        herokuappLoginPage.openLoginPage();
-        herokuappLoginPage.enterUsername("random");
-        herokuappLoginPage.enterPassword(correctPassword);
-        herokuappLoginPage.clickLoginButton();
-        herokuappLoginPage.shoudHaveUnsuccessfulMessage();
+    @Test(description = "Test unsuccessful login by invalid username functionality")
+    public void testUnsuccessfulLoginByInvalidUsername() {
+        loginPage.login(HerokuappData.INCORRECT_USERNAME, HerokuappData.CORRECT_PASSWORD);
+
+        assertTrue(loginPage.getMessage().contains(HerokuappData.UNSUCCESSFUL_USERNAME_MESSAGE));
+    }
+
+    @Test(description = "Test unsuccessful login by invalid password functionality")
+    public void testUnsuccessfulLoginByInvalidPassword() {
+        loginPage.login(HerokuappData.CORRECT_USERNAME, HerokuappData.INCORRECT_PASSWORD);
+
+        assertTrue(loginPage.getMessage().contains(HerokuappData.UNSUCCESSFUL_PASSWORD_MESSAGE));
     }
 }
